@@ -1,0 +1,33 @@
+package br.com.facapegraf.teste;
+
+import java.io.File;
+
+import br.com.facapegraf.leitu.MatrizAdj;
+
+public class Test {
+
+	public static void main(String[] args) {
+		/*
+		 * os arquivos de matriz estao na pasta recources
+		 */		
+		String caminho = new File("").getAbsoluteFile()+"/resources/matriz1.txt";
+		//String caminho = "C:/Projects/Projetos/Eclipse/FacapeGraf/resources/matriz1.txt";
+		
+		//Retorna uma matriz
+		int[][] matriz = new MatrizAdj(caminho).getMatriz();
+		/*
+		 * Tamanho da Matriz
+		 * Ex.: 
+		 * 	se 5x5 = 5
+		 * 	se 2x2 = 2
+		 * 	se 3x3 = 3
+		 * 	�r o mesmo que:
+		 * 		max_i
+		 * 		n� de vertices
+		 * 		n� de linhas		 
+		 */
+		int tam = new MatrizAdj(caminho).size();
+
+	}
+
+}
