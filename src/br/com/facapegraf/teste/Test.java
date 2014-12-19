@@ -28,6 +28,7 @@ public class Test {
 		 * 		n� de linhas		 
 		 */
 		int tam = new MatrizAdj(caminho).size();
+		
 
 	}
 
