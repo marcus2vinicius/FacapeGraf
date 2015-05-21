@@ -6,7 +6,9 @@ import br.com.facapegraf.leitu.MatrizAdj;
 
 /* Teste git Testing*/
 public class Test {
+/*Este programa apenas cria uma Matriz Ajacente em Objeto e mostra o tamanho dela
 
+  */
 	public static void main(String[] args) {
 		/*
 		 * os arquivos de matriz estao na pasta recources
@@ -22,13 +24,13 @@ public class Test {
 		 * 	se 5x5 = 5
 		 * 	se 2x2 = 2
 		 * 	se 3x3 = 3
-		 * 	�r o mesmo que:
+		 * 	E o mesmo que:
 		 * 		max_i
-		 * 		n� de vertices
-		 * 		n� de linhas		 
+		 * 		numero de vertices
+		 * 		numero de linhas
 		 */
 		int tam = new MatrizAdj(caminho).size();
-
+		System.out.println(tam);
 	}
 
 }

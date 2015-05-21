@@ -9,17 +9,20 @@ import java.util.Scanner;
 
 public class MatrizAdj { 
 	private String enderecoArquivo;
-	/*
-	 * Construtor recebendo o endere�o completo do arquivo
-	 * C:\arquivomatriz.txt
+	
+	/**
+	 * Construtor recebendo o endere�o completo do arquivo
+	 * @param Endereco String Ex.: C:\arquivomatriz.txt
 	 */
+	
 	public MatrizAdj(String enderecoArquivo){
 		this.enderecoArquivo = enderecoArquivo;
 	}
 	
-	/*
-	 * Retorna uma matriz
+	/**
+	 * @return Matriz de Adjacencia do Grafo
 	 */
+	
 	public int[][] getMatriz(){
 		try{
 			int linha = CountLinhas();		
@@ -37,43 +40,60 @@ public class MatrizAdj {
 			return null;
 		}
 	}
+	
+	/** 
+	 * @return Quantidade de Linhas da Matriz
+	 */
 
-	private int CountLinhas(){//retorna o número de linhas
+	private int CountLinhas(){
 		try{
 			LineNumberReader contLinhas = new LineNumberReader(
 			new InputStreamReader( new FileInputStream(
 				enderecoArquivo ) ) );//objeto contador de linhas 
+			
 			String proximaLinha = null;
-				while ( ( proximaLinha = contLinhas.readLine() ) != null ){//enquanto a próxima linha não for null, continua contando
+			
+			while ( ( proximaLinha = contLinhas.readLine() ) != null ){//enquanto a proxima linha nao for null, continua contando
 					if ( proximaLinha == null )
 						break;//termina o loop
 				}//while
-				return contLinhas.getLineNumber();//pega o número de linhas contados no while acima
+				return contLinhas.getLineNumber();//pega o numero de linhas contados no while acima
 			}catch (Exception e){//tratamento de erros
 				e.printStackTrace();//mostra a pilha de onde partiu o erro
 			}//catch
         return 0;
 	}//getLinhas
 	
-	private int CountColunas(){//retorna o número de colunas
+	/**
+	 * @return Numero de Colunas
+	 */
+	
+	private int CountColunas(){
 		int x = 0;
 		try{
 			String linha;
 			String[] colunas;
+			
 			BufferedReader mat = new BufferedReader(
 			new FileReader(enderecoArquivo ) );//ler o arquivo em string
+			
 			linha = mat.readLine();//recebe a primeira linha
 			colunas = linha.split(" ");//vetor recebe a quantidade de char tirando os espaços em branco
 			x = colunas.length;//tamanho do vetor( quantidade de colunas )
+		
 		}catch ( Exception e ){
 			e.printStackTrace();
 		}//catch
 		return x;
 	}
+	
+	/**
+	 * @return Quantidade de Linhas
+	 */	
+	
 	public int size(){
 		if(enderecoArquivo!=null)
 			return CountLinhas();
 		else return 0;
 	}
 }
-
