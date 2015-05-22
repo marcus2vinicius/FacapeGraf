@@ -4,53 +4,51 @@ import java.util.List;
 
 
 public class Vertice {
-	
+
 	private int valor;
 	private List<Aresta> arestas = new ArrayList<Aresta>();
-	
+
 	public Vertice(){
 
-	}	
-	
+	}
+
 	/**
 	 * @return Lista de Arestas
 	 */
-	
 	public List<Aresta> getArestas() {
 		return arestas;
 	}
-	
+
 	/** Auteração das Arestas
 	 * @param Objeto Arestas
 	 */
+//	public void setArestas(List<Aresta> arestas) {
+//		Grafo g = new Grafo();
+//		for(Aresta arts : arestas){
+//			g.addAresta(arts);
+//		}
+//	}
 
-	public void setArestas(List<Aresta> arestas) {
-		Grafo g = new Grafo(); 
-		for(Aresta arts : arestas){
-			g.AddAresta(arts);
-		}
-	}
-	
 	/**
 	 * @param Valor do Vértice
 	 */
-	
+
 	public Vertice(int valor){
 		this.valor = valor;
-	}	
-	
+	}
+
 	/**
 	 * @param Objeto Vértice
 	 */
-	
+
 	public Vertice(Vertice valor){
 		this.valor = valor.getValor();
-	}	
-	
+	}
+
 	/**
 	 * @return Valor do Vértice
 	 */
-	
+
 	public int getValor() {
 		return valor;
 	}
@@ -58,11 +56,11 @@ public class Vertice {
 	/**
 	 * @return Valor do Vértice
 	 */
-	
+
 	public void setValor(int valor) {
 		this.valor = valor;
 	}
-	
+
 	/**
 	 * @return Objeto Vértice
 	 */
@@ -71,13 +69,13 @@ public class Vertice {
 	}
 
 
-	
-	
+
+
 	/** (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 * Geração de Código Único para o Objeto
 	 */
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -89,7 +87,7 @@ public class Vertice {
 	/** (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

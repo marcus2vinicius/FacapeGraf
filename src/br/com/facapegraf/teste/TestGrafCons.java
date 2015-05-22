@@ -10,7 +10,7 @@ public class TestGrafCons {
 	public static void main(String[] args) throws IOException {
 		/*
 		 * os arquivos de matriz estao na pasta recources
-		 */		
+		 */
 		String caminho = new File("").getAbsoluteFile()+"/resources/matriz6.txt";
 		//String caminho = "C:/Projects/Projetos/Eclipse/FacapeGraf/resources/matriz1.txt";
 		ConstruGraf consG = new ConstruGraf(caminho);
