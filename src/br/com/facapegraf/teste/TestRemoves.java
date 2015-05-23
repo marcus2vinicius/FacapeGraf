@@ -21,6 +21,7 @@ public class TestRemoves {
         //g.remove(Remove.Single, new Aresta(1, 2)); OK
         //g.remove(Remove.Clear); OK
         //g.remove(Remove.Single,new Vertice(1)); OK
+        g.remove(new Aresta(1, 2));
 
     }
 }

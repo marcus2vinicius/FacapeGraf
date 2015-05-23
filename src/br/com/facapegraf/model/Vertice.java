@@ -1,5 +1,7 @@
 package br.com.facapegraf.model;
+
 import br.com.facapegraf.enums.Remove;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,23 +9,29 @@ import java.util.List;
 
 public class Vertice {
 
-	private int valor;
-	private List<Aresta> arestas = new ArrayList<Aresta>();
+    private int valor;
+    private List<Aresta> arestas = new ArrayList<Aresta>();
 
-	public Vertice(){
+    public Vertice() {
+    }
 
-	}
+    /**
+     * @param Valor do Vertice
+     */
+    public Vertice(int valor) {
+        this.valor = valor;
+    }
 
-	/**
-	 * @return Lista de Arestas
-	 */
-	public List<Aresta> getArestas() {
-		return arestas;
-	}
+    /**
+     * @return Lista de Arestas
+     */
+    public List<Aresta> getArestas() {
+        return arestas;
+    }
 
-	/** Auteração das Arestas
-	 * @param Objeto Arestas
-	 */
+    /** Auteracao das Arestas
+     * @param Objeto Arestas
+     */
 //	public void setArestas(List<Aresta> arestas) {
 //		Grafo g = new Grafo();
 //		for(Aresta arts : arestas){
@@ -31,59 +39,48 @@ public class Vertice {
 //		}
 //	}
 
-	/**
-	 * @param Valor do Vértice
-	 */
+    /**
+     * @param Objeto Vertice
+     */
+    public Vertice(Vertice valor) {
+        this.valor = valor.getValor();
+    }
 
-	public Vertice(int valor){
-		this.valor = valor;
-	}
+    /**
+     * @param Valor do Vertice
+     */
+    public int getValor() {
+        return valor;
+    }
 
-	/**
-	 * @param Objeto Vértice
-	 */
+    /**
+     * @param Valor do Vertice
+     */
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
 
-	public Vertice(Vertice valor){
-		this.valor = valor.getValor();
-	}
+    public void add(Aresta aresta) {
+        throw new NotImplementedException();
+    }
 
-	/**
-	 * @return Valor do Vértice
-	 */
+    public void setValor(Vertice valor) {
+        this.valor = valor.getValor();
+    }
 
-	public int getValor() {
-		return valor;
-	}
-
-	/**
-	 * @return Valor do Vértice
-	 */
-
-	public void setValor(int valor) {
-		this.valor = valor;
-	}
-
-	/**
-	 * @return Objeto Vértice
-	 */
-	public void setValor(Vertice valor) {
-		this.valor = valor.getValor();
-	}
-
-
-    public boolean remove(Remove remove){
-        if(Remove.Clear == remove)
+    public boolean remove(Remove remove) {
+        if (Remove.Clear == remove)
             return clearArestas();
         return false;
     }
 
-	public boolean remove(Remove remove, Aresta aresta){
-        if(Remove.Single == remove)
+    public boolean remove(Remove remove, Aresta aresta) {
+        if (Remove.Single == remove)
             return removeSingle(aresta);
         return false;
-	}
+    }
 
-	private boolean removeSingle(Aresta aresta){
+    private boolean removeSingle(Aresta aresta) {
         try {
             arestas.remove(aresta);
             return true;
@@ -92,42 +89,46 @@ public class Vertice {
         }
     }
 
-    private boolean clearArestas(){
+    private boolean clearArestas() {
         try {
-			arestas.clear();
-			return true;
-		}catch (Exception e){
-			return false;
-		}
+            arestas.clear();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
-	/** (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 * Geração de Código Único para o Objeto
-	 */
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + valor;
-		return result;
-	}
+    /**
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#hashCode()
+     * Geraï¿½ï¿½o de Cï¿½digo ï¿½nico para o Objeto
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + valor;
+        return result;
+    }
 
-	/** (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
+    /**
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Vertice other = (Vertice) obj;
-		if (valor != other.valor)
-			return false;
-		return true;
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Vertice other = (Vertice) obj;
+        if (valor != other.valor)
+            return false;
+        return true;
+    }
 }

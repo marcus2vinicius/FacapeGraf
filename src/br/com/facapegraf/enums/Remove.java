@@ -1,7 +1,7 @@
 package br.com.facapegraf.enums;
 
 /**
- * Created by marcus on 22/05/2015.
+ * Created on 22/05/2015.
  */
 
 public enum Remove {
