@@ -1,4 +1,6 @@
 package br.com.facapegraf.model;
+import br.com.facapegraf.enums.Remove;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,13 +71,40 @@ public class Vertice {
 	}
 
 
+    public boolean remove(Remove remove){
+        if(Remove.Clear == remove)
+            return clearArestas();
+        return false;
+    }
 
+	public boolean remove(Remove remove, Aresta aresta){
+        if(Remove.Single == remove)
+            return removeSingle(aresta);
+        return false;
+	}
+
+	private boolean removeSingle(Aresta aresta){
+        try {
+            arestas.remove(aresta);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    private boolean clearArestas(){
+        try {
+			arestas.clear();
+			return true;
+		}catch (Exception e){
+			return false;
+		}
+    }
 
 	/** (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 * Geração de Código Único para o Objeto
 	 */
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;

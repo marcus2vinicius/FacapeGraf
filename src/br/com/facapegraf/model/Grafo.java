@@ -1,4 +1,5 @@
 package br.com.facapegraf.model;
+import br.com.facapegraf.enums.Remove;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
@@ -110,7 +111,62 @@ public class Grafo {
 		return null;
 	}
 
-	/** Metodo para retornar uma lista de Aresta do Grafo
+	public boolean remove(Remove remove){
+		if(Remove.Clear == remove)
+			return clearGrafo();
+		return false;
+	}
+
+    private boolean clearGrafo() {
+        try {
+            arestas.clear();
+            vertices.clear();
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    public boolean remove(Remove remove, Aresta aresta){
+		if(Remove.Single == remove)
+			return removeSingle(aresta);
+		return false;
+	}
+
+    private boolean removeSingle(Aresta aresta) {
+        try {
+            aresta = arestas.get(arestas.indexOf(aresta));
+
+            Vertice v1 =  vertices.get(vertices.indexOf(aresta.getV1()));
+            Vertice v2 =  vertices.get(vertices.indexOf(aresta.getV2()));
+            v1.remove(Remove.Single,aresta);
+            v2.remove(Remove.Single,aresta);
+            arestas.remove(aresta);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    public boolean remove(Remove remove, Vertice vertice){
+		if(Remove.Single == remove)
+			return removeSingle(vertice);
+		return false;
+	}
+
+    private boolean removeSingle(Vertice vertice) {
+        try {
+            vertice = vertices.get(vertices.indexOf(vertice));
+            arestas.removeAll(vertice.getArestas());
+            vertice.remove(Remove.Clear);
+            vertices.remove(vertice);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    /** Metodo para retornar uma lista de Aresta do Grafo
 	 *
 	 *   @return Lista de arestas do Grafo
 	 */

@@ -2,8 +2,11 @@ package br.com.facapegraf.teste;
 
 import java.io.File;
 import java.io.IOException;
+import br.com.facapegraf.enums.Remove;
 import br.com.facapegraf.leitu.ConstruGraf;
+import br.com.facapegraf.model.Aresta;
 import br.com.facapegraf.model.Grafo;
+import br.com.facapegraf.model.Vertice;
 
 public class TestGrafCons {
 
@@ -16,6 +19,7 @@ public class TestGrafCons {
 		ConstruGraf consG = new ConstruGraf(caminho);
 		System.out.println(consG.matrizToString());
 		Grafo g = consG.getGrafo();
+		Vertice v = new Vertice();
 	}
 
 }

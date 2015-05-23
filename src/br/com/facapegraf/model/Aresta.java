@@ -95,8 +95,8 @@ public class Aresta {
 	@Override
 	public boolean equals(Object obj) {
 		Aresta a = (Aresta) obj;
-		return ( (v1 == a.v1) && (v2 == a.v2) ||
-				(v1 == a.v2) && (v2 == a.v1) );
+		return ( (v1.getValor() == a.v1.getValor()) && (v2.getValor() == a.v2.getValor()) ||
+				(v1.getValor() == a.v2.getValor()) && (v2.getValor() == a.v1.getValor()) );
 	}
 
 
