@@ -24,8 +24,12 @@ public class Broto {
     }
 
     public static boolean isBroto(Grafo g) {
-        /*A Verificar*/
-        return g.getVertices().size() % 2 != 0 && Conexo.isConexo(g);
+        /*A Verificar
+        *   Um broto é um ciclo ímpar que é um caminho M-alternante. O único vértice do broto
+                que não é saturado por arestas de M que estão no broto é chamado de base do broto
+                http://www.din.uem.br/sbpo/sbpo2008/pdf/arq0297.pdf
+        * */
+        return /*g.getVertices().size() % 2 != 0 && Conexo.isConexo(g);*/true;
     }
 
 

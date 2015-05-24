@@ -42,11 +42,9 @@ public class Grafo {
     }
 
     /**
-     * Adicionar uma Aresta ao Grafo
-     *
-     * @param Objeto Vertice 1 e Objeto Vertice 2
+     * @param Object Vertice 1 e Objeto Vertice 2
+     *  Adicionar uma Aresta ao Grafo
      */
-
     private void addAresta(Vertice V1, Vertice V2) {
 
         Vertice v1 = addVertice(V1.getValor());

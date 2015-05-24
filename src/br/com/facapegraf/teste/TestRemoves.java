@@ -1,12 +1,10 @@
 package br.com.facapegraf.teste;
-
 import br.com.facapegraf.enums.Remove;
 import br.com.facapegraf.leitu.ConstruGraf;
 import br.com.facapegraf.leitu.MatrizAdj;
 import br.com.facapegraf.model.Aresta;
 import br.com.facapegraf.model.Grafo;
 import br.com.facapegraf.model.Vertice;
-
 import java.io.File;
 
 /**
@@ -21,7 +19,7 @@ public class TestRemoves {
         g.remove( new Aresta(1, 2));
         //g.remove(Remove.Clear); OK
         g.remove(new Vertice(1));
-        g.remove(new Aresta(1, 2));
-
+        Aresta aresta = new Aresta(1, 2);
+        g.remove(aresta);
     }
 }

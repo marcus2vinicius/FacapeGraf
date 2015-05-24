@@ -131,4 +131,9 @@ public class Vertice {
             return false;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Valor{"+ valor +"}";
+    }
 }
