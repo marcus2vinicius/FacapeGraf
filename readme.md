@@ -17,8 +17,8 @@ Tem a finalidade de facilitar a implementação de algoritomos em grafos.
 * Execute as classes no pacote teste ou examples
 
 ### Execução a partir da biblioteca
-*  Baixe a biblioteca [aqui]
+*  Baixe a biblioteca FacapeGraf.jar no Source Forge[aqui]
 *  Add no classPath
 
 
-[aqui]:http://www.google.com.br
+[aqui]:https://sourceforge.net/projects/facapegraf/
