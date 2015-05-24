@@ -18,9 +18,9 @@ public class TestRemoves {
         String caminho = new File("").getAbsoluteFile() + "/resources/matriz1.txt";
         //String caminho = "C:/Projects/Projetos/Eclipse/FacapeGraf/resources/matriz1.txt";
         Grafo g = new ConstruGraf(caminho).getGrafo();
-        //g.remove(Remove.Single, new Aresta(1, 2)); OK
+        g.remove( new Aresta(1, 2));
         //g.remove(Remove.Clear); OK
-        //g.remove(Remove.Single,new Vertice(1)); OK
+        g.remove(new Vertice(1));
         g.remove(new Aresta(1, 2));
 
     }

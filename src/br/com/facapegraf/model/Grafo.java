@@ -9,9 +9,7 @@ import java.util.Objects;
 
 /**
  * Class Grafo, onde contera as listas de Vertices e Arestas, e suas Condicoes.
- *
- * @author Lucas Barros e Marcus Vinicius
- * @version 1.00
+ * @version 0.1
  */
 
 public class Grafo {
@@ -67,7 +65,6 @@ public class Grafo {
     /**
      * @param Objeto Aresta
      */
-
     public void add(Aresta a) {
         addAresta(a.getV1(), a.getV2());
     }
@@ -109,7 +106,6 @@ public class Grafo {
      * @param Objeto Vertice
      * @return vertice 1
      */
-
     public Vertice add(Vertice V) {
         if (isValido(V.getValor())) {
             Vertice v1 = addVertice(V.getValor());
@@ -129,7 +125,6 @@ public class Grafo {
             else if (objects.get(0) instanceof Aresta)
                 setAretas((List<Aresta>) (Object) objects);
         }
-
     }
 
     public boolean remove(Aresta aresta) {
@@ -140,24 +135,30 @@ public class Grafo {
         return remove(Remove.Single, vertice);
     }
 
-    public boolean remove(List<Object> objects) {
-        objects = null;
-        if (objects.size() > 0) {
-            if (objects.get(0) instanceof Vertice) {
-                removeVerticeAll((List<Vertice>) (Object) objects);
-            } else if (objects.get(0) instanceof Aresta) {
-                removeArestaAll((List<Aresta>) (Object) objects);
+    public boolean remove(List<?> objects) {
+        try {
+            if (objects != null && objects.size() > 0) {
+
+                if (objects.get(0) instanceof Vertice)
+                    removeVerticeAll((List<Vertice>) (Object) objects);
+                else if (objects.get(0) instanceof Aresta)
+                    removeArestaAll((List<Aresta>) (Object) objects);
+
+                return true;
             }
+            return false;
+        }catch (Exception e){
+            return false;
         }
-        return false;
+
     }
 
     private void removeArestaAll(List<Aresta> arestas) {
-
+        throw new NotImplementedException();
     }
 
     private void removeVerticeAll(List<Vertice> vertices) {
-
+        throw new NotImplementedException();
     }
 
     public boolean remove(Remove remove) {
