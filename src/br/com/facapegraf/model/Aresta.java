@@ -3,6 +3,7 @@ package br.com.facapegraf.model;
 public class Aresta {
     private Vertice v1;
     private Vertice v2;
+    private int peso;
 
     public Aresta() {
 
@@ -20,12 +21,31 @@ public class Aresta {
     /**
      * @param Valor Vertice 1
      * @param Valor Vertice 2
+     * @param Valor Int peso
+     */
+    public Aresta(Vertice v1, Vertice v2, int peso){
+    	this.v1 = v1;
+    	this.v2 = v2;
+    	this.peso = peso;
+    }
+    
+    
+    /**
+     * @param Valor Vertice 1
+     * @param Valor Vertice 2
      */
 
     public Aresta(int v1, int v2) {
         this.v1 = new Vertice(v1);
         this.v2 = new Vertice(v2);
     }
+    
+    public Aresta(int v1, int v2, int peso) {
+        this.v1 = new Vertice(v1);
+        this.v2 = new Vertice(v2);
+        this.peso = peso;
+    }
+    
 
 
     /**
@@ -60,8 +80,18 @@ public class Aresta {
     public void setV2(Vertice v2) {
         this.v2 = v2;
     }
+    
+    
 
-    /**
+    public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+
+	/**
      * @return Vertice 1 e Vertive 2
      */
 
