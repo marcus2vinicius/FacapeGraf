@@ -111,13 +111,15 @@ public class ConstruGraf {
                             tipo = Tipo.Digrafo;
                             v1.getArestas().add(a);
                             v2.getArestas().add(a);
+                            g.getArestas().add(a);
                         }else{//TIPO Grafo
                             if(!g.contains(a)) {
                                 v1.getArestas().add(a);
                                 v2.getArestas().add(a);
+                                g.getArestas().add(a);
                             }
                         }
-                        g.getArestas().add(a);
+
                     }
                 //}
             }
