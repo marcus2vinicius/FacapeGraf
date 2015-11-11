@@ -1,5 +1,3 @@
-package br.com.facapegraf.teste;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,7 +24,7 @@ public class TestCollectionArestasPeso {
 //
 //        g.add(arestas);
         
-        String caminho = new File("").getAbsoluteFile() + "/resources/matriz1.txt";
+        String caminho = new File("").getAbsoluteFile() + Constantes.url_matriz_exemplos+"/matriz1.txt";
         ConstruGraf cg = new ConstruGraf(caminho);
         Random random = new Random();
         

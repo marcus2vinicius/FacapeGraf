@@ -1,5 +1,3 @@
-package br.com.facapegraf.teste;
-
 import java.io.File;
 
 import br.com.facapegraf.leitu.MatrizAdj;
@@ -13,7 +11,7 @@ public class Test {
         /*
 		 * os arquivos de matriz estao na pasta recources
 		 */
-        String caminho = new File("").getAbsoluteFile() + "/resources/matriz1.txt";
+        String caminho = new File("").getAbsoluteFile() + Constantes.url_matriz_exemplos +"/matriz1.txt";
         //String caminho = "C:/Projects/Projetos/Eclipse/FacapeGraf/resources/matriz1.txt";
 
         //Retorna uma matriz

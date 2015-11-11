@@ -1,5 +1,3 @@
-package br.com.facapegraf.teste;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -15,7 +13,7 @@ public class TestGrafCons {
         /*
 		 * os arquivos de matriz estao na pasta recources
 		 */
-        String caminho = new File("").getAbsoluteFile() + "/resources/matriz6.txt";
+        String caminho = new File("").getAbsoluteFile() + Constantes.url_matriz_exemplos+"/matriz6.txt";
         //String caminho = "C:/Projects/Projetos/Eclipse/FacapeGraf/resources/matriz1.txt";
         ConstruGraf consG = new ConstruGraf(caminho);
         System.out.println(consG.matrizToString());

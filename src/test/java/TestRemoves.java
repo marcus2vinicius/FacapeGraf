@@ -1,4 +1,3 @@
-package br.com.facapegraf.teste;
 import br.com.facapegraf.enums.Remove;
 import br.com.facapegraf.leitu.ConstruGraf;
 import br.com.facapegraf.leitu.MatrizAdj;
@@ -13,7 +12,7 @@ import java.io.File;
 public class TestRemoves {
 
     public static void main(String args[]) {
-        String caminho = new File("").getAbsoluteFile() + "/resources/matriz1.txt";
+        String caminho = new File("").getAbsoluteFile() + Constantes.url_matriz_exemplos+"/matriz1.txt";
         //String caminho = "C:/Projects/Projetos/Eclipse/FacapeGraf/resources/matriz1.txt";
         Grafo g = new ConstruGraf(caminho).getGrafo();
         g.remove( new Aresta(1, 2));
