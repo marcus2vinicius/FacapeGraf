@@ -1,9 +1,12 @@
 package br.com.facapegraf.model;
 
+import br.com.facapegraf.enums.Tipo;
+
 public class Aresta {
     private Vertice v1;
     private Vertice v2;
     private int peso;
+    private Tipo tipo;
 
     public Aresta() {
 
@@ -130,5 +133,11 @@ public class Aresta {
                 (v1.getValor() == a.v2.getValor()) && (v2.getValor() == a.v1.getValor()));
     }
 
+    public Tipo getTipo() {
+        return tipo;
+    }
 
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
 }

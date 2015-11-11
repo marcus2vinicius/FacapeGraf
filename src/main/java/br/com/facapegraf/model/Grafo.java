@@ -1,6 +1,7 @@
 package br.com.facapegraf.model;
 
 import br.com.facapegraf.enums.Remove;
+import br.com.facapegraf.enums.Tipo;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class Grafo {
 
     private List<Aresta> arestas = new ArrayList<Aresta>();
     private List<Vertice> vertices = new ArrayList<Vertice>();
+    private Tipo tipo;
 
     public Grafo() {
 
@@ -259,5 +261,18 @@ public class Grafo {
         for (Vertice vertice : vertices) {
             add(vertice);
         }
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
+    public boolean contains(Aresta aresta){
+        Aresta arestaIvertida = new Aresta(aresta.getV2(),aresta.getV1());
+        return arestas.contains(aresta) || arestas.contains(arestaIvertida);
     }
 }
