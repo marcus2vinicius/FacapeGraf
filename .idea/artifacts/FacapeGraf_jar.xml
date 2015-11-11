@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="FacapeGraf:jar">
-    <output-path>$PROJECT_DIR$/classes/artifacts/FacapeGraf_jar</output-path>
-    <root id="archive" name="FacapeGraf.jar">
-      <element id="module-output" name="FacapeGraf" />
-    </root>
-  </artifact>
-</component>
