@@ -6,9 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import javax.management.RuntimeErrorException;
-
 import br.com.facapegraf.model.Aresta;
 import br.com.facapegraf.model.Grafo;
 import br.com.facapegraf.model.Vertice;
@@ -37,7 +34,7 @@ public class Dijkstra1 {
 		verticesNaoVerificados.add(fonte);
 		
 		while(verticesNaoVerificados.size() > 0){
-			Vertice v = getfMinimo(verticesNaoVerificados);
+			Vertice v = getMinimo(verticesNaoVerificados);
 			verticesVerificados.add(v);
 			verticesNaoVerificados.remove(v);
 			findDistanciasMinimas(v);
@@ -77,7 +74,7 @@ public class Dijkstra1 {
 	}
 	
 	
-	private Vertice getfMinimo(Set<Vertice> vertices){
+	private Vertice getMinimo(Set<Vertice> vertices){
 		Vertice minimo = null;
 		for(Vertice vertice : vertices){
 			if(minimo == null){

@@ -7,6 +7,7 @@ import java.util.Random;
 
 import br.com.facapegraf.leitu.ConstruGraf;
 import br.com.facapegraf.model.Aresta;
+import br.com.facapegraf.model.Grafo;
 import br.com.facapegraf.model.Vertice;
 
 public class TestDijkstra1 {
@@ -19,9 +20,9 @@ public class TestDijkstra1 {
 
         
         String caminho = new File("").getAbsoluteFile() + 
-        		Constantes.url_matriz_exemplos+"/matriz1.txt";
+        		Constantes.url_matriz_exemplos+"/matriz10.txt";
         ConstruGraf cg = new ConstruGraf(caminho);
-        
+        Grafo g= cg.getGrafo();
         arestas = cg.getGrafo().getArestas();
         List<Vertice> vertices = cg.getGrafo().getVertices();
         
@@ -33,7 +34,7 @@ public class TestDijkstra1 {
         Dijkstra1 dijkstra = new Dijkstra1(cg.getGrafo());
         
         //vertice fonte
-        dijkstra.run(vertices.get(0));
+        dijkstra.run(vertices.get(4));
         
         //coloca o vertice destino como parametro
         LinkedList<Vertice> menorCaminho = dijkstra.getCaminho(vertices.get(3));
