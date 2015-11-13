@@ -1,5 +1,3 @@
-package teste;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,6 +6,7 @@ import java.util.Random;
 
 import br.com.facapegraf.leitu.ConstruGraf;
 import br.com.facapegraf.model.Aresta;
+import br.com.facapegraf.model.Grafo;
 
 public class TestCollectionArestasPeso {
 
