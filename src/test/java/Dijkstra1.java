@@ -6,28 +6,23 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import javax.management.RuntimeErrorException;
-
 import br.com.facapegraf.model.Aresta;
 import br.com.facapegraf.model.Grafo;
 import br.com.facapegraf.model.Vertice;
 
 public class Dijkstra1 {
-	
-	private final List<Vertice> vertices;
-	private final List<Aresta> arestas;
+
+	private Grafo grafo;
 	private Set<Vertice> verticesVerificados;
 	private Set<Vertice> verticesNaoVerificados;
 	private Map<Vertice, Vertice> predecessores;
 	private Map<Vertice, Integer> distancia;
 	
 	public Dijkstra1(Grafo grafo){
-		this.vertices = new ArrayList<Vertice>(grafo.getVertices());
-		this.arestas = new ArrayList<Aresta>(grafo.getArestas());
+		this.grafo = grafo;
 	}
 	
-	public void run(Vertice fonte){
+	private void run(Vertice fonte){
 		verticesVerificados = new HashSet<Vertice>();
 		verticesNaoVerificados = new HashSet<Vertice>();
 		distancia = new HashMap<Vertice, Integer>();
@@ -37,7 +32,7 @@ public class Dijkstra1 {
 		verticesNaoVerificados.add(fonte);
 		
 		while(verticesNaoVerificados.size() > 0){
-			Vertice v = getfMinimo(verticesNaoVerificados);
+			Vertice v = getMinimo(verticesNaoVerificados);
 			verticesVerificados.add(v);
 			verticesNaoVerificados.remove(v);
 			findDistanciasMinimas(v);
@@ -58,7 +53,7 @@ public class Dijkstra1 {
 	}
 	
 	private int getDistancia(Vertice v1, Vertice v2){
-		for(Aresta aresta : arestas){
+		for(Aresta aresta : grafo.getArestas()){
 			if (aresta.getV1().equals(v1) && aresta.getV2().equals(v2)) {
 				return aresta.getPeso();
 			}
@@ -68,7 +63,7 @@ public class Dijkstra1 {
 	
 	private List<Vertice> getVizinhos(Vertice vertice){
 		List<Vertice> vizinhos = new ArrayList<Vertice>();
-		for(Aresta aresta : arestas){
+		for(Aresta aresta : grafo.getArestas()){
 			if (aresta.getV1().equals(vertice) && !isVerificado(aresta.getV2())) {
 				vizinhos.add(aresta.getV2());
 			}
@@ -77,7 +72,7 @@ public class Dijkstra1 {
 	}
 	
 	
-	private Vertice getfMinimo(Set<Vertice> vertices){
+	private Vertice getMinimo(Set<Vertice> vertices){
 		Vertice minimo = null;
 		for(Vertice vertice : vertices){
 			if(minimo == null){
@@ -104,7 +99,8 @@ public class Dijkstra1 {
 		}
 	}
 	
-	public LinkedList<Vertice> getCaminho(Vertice alvo){
+	public LinkedList<Vertice> getCaminho(Vertice fonte, Vertice alvo){
+		run(fonte);
 		LinkedList<Vertice> caminho = new LinkedList<Vertice>();
 		Vertice temp = alvo;
 		
