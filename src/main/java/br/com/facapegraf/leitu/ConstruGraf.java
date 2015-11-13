@@ -13,6 +13,7 @@ public class ConstruGraf {
     private Grafo g;
     public int[][] Matriz;
     public String EnderecoArquivo;
+    private Tipo tipo;
 
 
     /**
@@ -20,6 +21,13 @@ public class ConstruGraf {
      */
     public ConstruGraf(String EnderecoArquivo) {
         this.EnderecoArquivo = EnderecoArquivo;
+        tipo = Tipo.Grafo;
+        init();
+    }
+    
+    public ConstruGraf(String EnderecoArquivo,Tipo tipo) {
+        this.EnderecoArquivo = EnderecoArquivo;
+        this.tipo = tipo;
         init();
     }
 
@@ -96,27 +104,35 @@ public class ConstruGraf {
     private void addArestas() {
         int max = Matriz.length;
         int vert = 0;
-        int arest = 0;
-        Tipo tipo = Tipo.Grafo;
+        int arest = 0;       
 
         for (int i = 0; i < max; i++) {
             for (int j = 0; j < max; j++) {
                 if (Matriz[i][j] != 0/* || Matriz[j][i] != 0*/) {
-                    Vertice v1 = g.getVertices().get(i);
-                    Vertice v2 = g.getVertices().get(j);
-                    Aresta a = new Aresta(v1, v2);
-                    a.setPeso(Matriz[i][j]);
-                    v1.getArestas().add(a);
-                    v2.getArestas().add(a);
-                    g.getArestas().add(a);
+                	if(tipo.equals(Tipo.Digrafo)){
+		                Vertice v1 = g.getVertices().get(i);
+		                Vertice v2 = g.getVertices().get(j);
+		                Aresta a = new Aresta(v1, v2);
+		                a.setPeso(Matriz[i][j]);
+		                v1.getArestas().add(a);
+		                v2.getArestas().add(a);
+		                g.getArestas().add(a);	
+                	}else{
+		                Vertice v1 = g.getVertices().get(i);
+		                Vertice v2 = g.getVertices().get(j);
+		                Aresta a = new Aresta(v1, v2);
+		                if(g.contains(a)){//apenas grafo			                
+			                v1.getArestas().add(a);
+			                v2.getArestas().add(a);
+			                g.getArestas().add(a);		                
+		                }
+		                a.setPeso(Matriz[i][j]);
+                	}
+                	
                 }
             }
         }        
         g.setTipo(tipo);        
-    }
-
-    private boolean isDigrafo(int[][] matriz, int i, int j) {
-        return matriz[i][j] != matriz[j][i];
     }
 
     /**

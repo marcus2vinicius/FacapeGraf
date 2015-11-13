@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+import br.com.facapegraf.enums.Tipo;
 import br.com.facapegraf.leitu.ConstruGraf;
 import br.com.facapegraf.model.Aresta;
 import br.com.facapegraf.model.Grafo;
@@ -20,8 +21,8 @@ public class TestDijkstra1 {
 
         
         String caminho = new File("").getAbsoluteFile() + 
-        		Constantes.url_matriz_exemplos+"/matriz10.txt";
-        ConstruGraf cg = new ConstruGraf(caminho);
+        		Constantes.url_matriz_exemplos+"/matriz7.txt";
+        ConstruGraf cg = new ConstruGraf(caminho,Tipo.Digrafo);
         Grafo g= cg.getGrafo();
         arestas = cg.getGrafo().getArestas();
         List<Vertice> vertices = cg.getGrafo().getVertices();
@@ -33,15 +34,17 @@ public class TestDijkstra1 {
         
         Dijkstra1 dijkstra = new Dijkstra1(cg.getGrafo());
         
-        //vertice fonte
-        dijkstra.run(vertices.get(4));
-        
         //coloca o vertice destino como parametro
-        LinkedList<Vertice> menorCaminho = dijkstra.getCaminho(vertices.get(3));
+        LinkedList<Vertice> menorCaminho = dijkstra.getCaminho(vertices.get(0), 
+        													   vertices.get(0));
         System.out.println();
-        System.out.print("Caminho: ");
-        for(Vertice vertice : menorCaminho){
-        	System.out.print("-> " + vertice);
+        if(menorCaminho != null){
+        	System.out.print("Caminho: ");
+        	for(Vertice vertice : menorCaminho){
+        		System.out.print("-> v" + vertice.getValor());
+        	}
+        } else {
+        	System.out.println("Não existe caminho!");
         }
     }
 
