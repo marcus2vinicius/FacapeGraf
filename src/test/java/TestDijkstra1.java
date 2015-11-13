@@ -21,7 +21,7 @@ public class TestDijkstra1 {
 
         
         String caminho = new File("").getAbsoluteFile() + 
-        		Constantes.url_matriz_exemplos+"/matriz7.txt";
+        		Constantes.url_matriz_exemplos+"/matriz10.txt";
         ConstruGraf cg = new ConstruGraf(caminho,Tipo.Digrafo);
         Grafo g= cg.getGrafo();
         arestas = cg.getGrafo().getArestas();
@@ -36,7 +36,7 @@ public class TestDijkstra1 {
         
         //coloca o vertice destino como parametro
         LinkedList<Vertice> menorCaminho = dijkstra.getCaminho(vertices.get(0), 
-        													   vertices.get(0));
+        													   vertices.get(3));
         System.out.println();
         if(menorCaminho != null){
         	System.out.print("Caminho: ");
