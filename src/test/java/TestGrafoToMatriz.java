@@ -1,5 +1,3 @@
-package teste;
-
 import br.com.facapegraf.leitu.ConstruGraf;
 import br.com.facapegraf.model.Aresta;
 import br.com.facapegraf.model.Grafo;
