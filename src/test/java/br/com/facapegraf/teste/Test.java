@@ -1,3 +1,5 @@
+package br.com.facapegraf.teste;
+
 import java.io.File;
 
 import br.com.facapegraf.leitu.MatrizAdj;

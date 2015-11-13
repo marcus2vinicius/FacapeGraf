@@ -1,6 +1,6 @@
-import br.com.facapegraf.enums.Remove;
+package br.com.facapegraf.teste;
+
 import br.com.facapegraf.leitu.ConstruGraf;
-import br.com.facapegraf.leitu.MatrizAdj;
 import br.com.facapegraf.model.Aresta;
 import br.com.facapegraf.model.Grafo;
 import br.com.facapegraf.model.Vertice;

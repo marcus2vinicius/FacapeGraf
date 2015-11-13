@@ -1,9 +1,10 @@
+package br.com.facapegraf.teste;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 import br.com.facapegraf.enums.Tipo;
 import br.com.facapegraf.leitu.ConstruGraf;
